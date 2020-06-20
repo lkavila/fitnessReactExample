@@ -8,34 +8,24 @@ container.appendChild(element)*/
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Card from './components/Card'
+import Welcome from './components/Welcome'
+import 'bootstrap/dist/css/bootstrap.css'
 
-const user = {
-  firstName: 'Luis Kener',
-  lastName: 'Avila Palacio',
-  avatar: 'https://vignette.wikia.nocookie.net/shingeki-no-kyojin/images/e/ea/Eren_Jaeger_-_Anime.png/revision/latest/scale-to-width-down/270?cb=20190429004402&path-prefix=es'
-}
-
-function getName (user){
-  return `${user.firstName} ${user.lastName}`
-}
-function getAvatar (user){
-  return `${user.avatar}`
-}
-function getGreeting(user){
-  if (user){
-    return <h1>Hello {getName(user)}</h1>
-  }
-    return <h1>Hello Stranger</h1>
-}
-
-const element = (
-  <div>      
-    <h1>{getGreeting(user)}</h1>
-    <img src={getAvatar(user)}/>
-  </div>
-
-)
 const container = document.getElementById('root')
 
-ReactDOM.render(element, container)
+ReactDOM.render(<div>
+  <Welcome
+        userName="Luis Kener"
+        
+        /> 
+    
+  <Card 
+                title="Technique Guides"
+                description="Learn amazing street workout and calisthenics"
+                img="https://firebasestorage.googleapis.com/v0/b/tutoriales-e4830.appspot.com/o/exercise.png?alt=media&token=b9c4b236-16a9-4a56-bba2-90c9660a0f06"
+                leftColor="#A74CF2"
+                rightColor="#617BFB"
+/>
+</div>, container)
 
